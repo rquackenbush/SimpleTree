@@ -1,0 +1,9 @@
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\bin\Debug\SimpleTree.Tests.dll
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\bin\Debug\SimpleTree.Tests.pdb
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\bin\Debug\nunit.framework.dll
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\bin\Debug\SimpleTree.dll
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\bin\Debug\SimpleTree.pdb
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\bin\Debug\nunit.framework.xml
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\obj\Debug\SimpleTree.Tests.csprojResolveAssemblyReference.cache
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\obj\Debug\SimpleTree.Tests.dll
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree.Tests\obj\Debug\SimpleTree.Tests.pdb
