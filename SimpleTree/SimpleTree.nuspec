@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CASBaseLib</id>
+    <title>CASBaseLib</title>
+    <version>1.0.0</version>
+    <authors>Rich Quackenbush</authors>
+    <owners>CaptiveAire Systems</owners>
+    <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+    <projectUrl>https://github.com/CaptiveAire/SimpleTree</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>SimpleTree is an implementation of a generic tree structure.</description>
+    <releaseNotes></releaseNotes>
+    <tags></tags>
+  </metadata>
+</package>
