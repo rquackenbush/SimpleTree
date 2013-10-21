@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bar.cs" />
+    <Compile Include="CreateTreeFromHiearchyTests.cs" />
     <Compile Include="CreateTreeTests.cs" />
     <Compile Include="FlattenTests.cs" />
     <Compile Include="ItemLineageTests.cs" />

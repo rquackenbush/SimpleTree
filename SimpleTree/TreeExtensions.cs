@@ -152,5 +152,36 @@ namespace SimpleTree
                 nodes.Add(childNode);
             }
         }
+
+        /// <summary>
+        /// Creates a tree from a hierarchy
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="rootItems"></param>
+        /// <param name="childSelector"></param>
+        /// <returns></returns>
+        public static Tree<T> CreateTreeFromHierarchy<T>(this IEnumerable<T> rootItems, Func<T, IEnumerable<T>> childSelector)
+        {
+            var tree = new Tree<T>();
+
+            AddItemsToTreeFromHierarchy(tree.Nodes, rootItems, childSelector);
+
+            return tree;
+        }
+
+        private static void AddItemsToTreeFromHierarchy<T>(TreeNodes<T> nodes, IEnumerable<T> items,
+                                             Func<T, IEnumerable<T>> childSelector)
+        {
+            foreach (var item in items)
+            {
+                var node = new TreeNode<T>(item);
+
+                nodes.Add(node);
+
+                var childItems = childSelector(item);
+
+                AddItemsToTreeFromHierarchy<T>(node.Nodes, childItems, childSelector);
+            }
+        }
     }
 }

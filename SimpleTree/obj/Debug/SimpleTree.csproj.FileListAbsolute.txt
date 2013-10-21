@@ -2,3 +2,4 @@ C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree\bin\Debug\Simpl
 C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree\bin\Debug\SimpleTree.pdb
 C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree\obj\Debug\SimpleTree.dll
 C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree\obj\Debug\SimpleTree.pdb
+C:\Users\rich.quackenbush\Documents\GitHub\SimpleTree\SimpleTree\obj\Debug\SimpleTree.csprojResolveAssemblyReference.cache
