@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>CASBaseLib</id>
-    <title>CASBaseLib</title>
+    <id>SimpleTree</id>
+    <title>SimpleTree</title>
     <version>1.0.0</version>
     <authors>Rich Quackenbush</authors>
     <owners>CaptiveAire Systems</owners>
