@@ -10,6 +10,21 @@ namespace SimpleTree
     /// </summary>
     public static class TreeExtensions
     {
+
+        /// <summary>
+        /// Performs an action on each item in the tree
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="tree"></param>
+        /// <param name="action"></param>
+        public static void ForEach<T>(this Tree<T> tree, Action<TreeNode<T>> action)
+        {
+            foreach (var node in tree.Nodes.GetItems(n => n.Nodes))
+            {
+                action(node);
+            }
+        }
+
         /// <summary>
         /// 
         /// </summary>
