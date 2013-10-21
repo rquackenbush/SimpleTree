@@ -40,5 +40,35 @@ namespace SimpleTree.Tests
 
             Assert.AreSame(bar0_1, tree.Nodes[0].Nodes[1].Item);
         }
+
+        [Test]
+        public void CreateTree2()
+        {
+            var bar0 = new Bar(1, null);
+            var bar1 = new Bar(2, null);
+            var bar0_0 = new Bar(3, 1);
+            var bar0_1 = new Bar(4, 1);
+            var bar_0_0_0 = new Bar(5, 3);
+
+            var list = new List<Bar>()
+                {
+                    bar0, 
+                    bar1, 
+                    bar0_0,
+                    bar0_1,
+                    bar_0_0_0
+                };
+
+
+
+            //Create the tree
+            var tree = list.CreateTree(b => b.ParentId == null, (p, c) => c.ParentId != null && c.ParentId.Value == p.Id);
+
+            Assert.AreSame(bar0, tree.Nodes[0].Item);
+
+            Assert.AreSame(bar1, tree.Nodes[1].Item);
+
+            Assert.AreSame(bar0_1, tree.Nodes[0].Nodes[1].Item);
+        }
     }
 }

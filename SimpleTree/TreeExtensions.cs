@@ -116,6 +116,24 @@ namespace SimpleTree
         }
 
         /// <summary>
+        /// Creates a tree from a flat list
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="allItems"></param>
+        /// <param name="rootSelector"></param>
+        /// <param name="childSelector"></param>
+        /// <returns></returns>
+        public static Tree<T> CreateTree<T>(this IEnumerable<T> allItems, Func<T, bool> rootSelector,
+            Func<T, T, bool> childSelector)
+        {
+            var tree = new Tree<T>();
+
+            var rootItems = allItems.Where(rootSelector);
+
+            return CreateTree(rootItems, allItems, childSelector);
+        }
+
+        /// <summary>
         /// Recursive method to build a tree.
         /// </summary>
         /// <typeparam name="T"></typeparam>
