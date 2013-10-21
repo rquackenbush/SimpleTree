@@ -183,5 +183,37 @@ namespace SimpleTree
                 AddItemsToTreeFromHierarchy<T>(node.Nodes, childItems, childSelector);
             }
         }
+
+        /// <summary>
+        /// Transforms a tree from one type to another
+        /// </summary>
+        /// <typeparam name="TIn"></typeparam>
+        /// <typeparam name="TOut"></typeparam>
+        /// <param name="inTree"></param>
+        /// <param name="transform"></param>
+        /// <returns></returns>
+        public static Tree<TOut> TransformTree<TIn, TOut>(this Tree<TIn> inTree, Func<TIn, TOut> transform)
+        {
+            var outTree = new Tree<TOut>();
+
+            TransformNodes(inTree.Nodes, outTree.Nodes, transform);
+
+            return outTree;
+        }
+
+        private static void TransformNodes<TIn, TOut>(TreeNodes<TIn> inNodes, TreeNodes<TOut> outNodes, Func<TIn, TOut> transform)
+        {
+            foreach (var inNode in inNodes)
+            {
+                var transFormedItem = transform(inNode.Item);
+
+                var outNode = new TreeNode<TOut>(transFormedItem);
+
+                outNodes.Add(outNode);
+
+                TransformNodes(inNode.Nodes, outNode.Nodes, transform);
+
+            }
+        }
     }
 }
