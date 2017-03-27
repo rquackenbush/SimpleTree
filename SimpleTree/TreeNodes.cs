@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace SimpleTree
+namespace CaptiveAire.SimpleTree
 {
     /// <summary>
     /// A collection of tree nodes.
@@ -10,8 +9,6 @@ namespace SimpleTree
     /// <typeparam name="T"></typeparam>
     public class TreeNodes<T> : ObservableCollection<TreeNode<T>>
     {
-        private readonly List<TreeNode<T>> _nodes = new List<TreeNode<T>>();
-
         internal TreeNodes()
         {
         }
@@ -54,6 +51,5 @@ namespace SimpleTree
 
             base.ClearItems();
         }
-
     }
 }

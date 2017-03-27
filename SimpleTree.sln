@@ -1,18 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTree", "SimpleTree\SimpleTree.csproj", "{920DEF23-4D0C-4DB4-BC29-C8927D4F2BD3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptiveAire.SimpleTree", "SimpleTree\CaptiveAire.SimpleTree.csproj", "{920DEF23-4D0C-4DB4-BC29-C8927D4F2BD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTree.Tests", "SimpleTree.Tests\SimpleTree.Tests.csproj", "{D52193E0-2FE8-40E3-983C-B7F5BE66CCD7}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0BFFE5C0-98A5-4EDA-AC77-8C3429C72372}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaptiveAire.SimpleTree.Tests", "SimpleTree.Tests\CaptiveAire.SimpleTree.Tests.csproj", "{D52193E0-2FE8-40E3-983C-B7F5BE66CCD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

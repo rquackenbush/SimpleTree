@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using System.Linq;
+using Xunit;
 
-namespace SimpleTree.Tests
+namespace CaptiveAire.SimpleTree.Tests
 {
-    [TestFixture]
     public class FlattenTests
     {
-        [Test]
+        [Fact]
         public void FlattenSingle()
         {
             var foo = new Foo();
@@ -21,12 +16,12 @@ namespace SimpleTree.Tests
 
             var flattened = tree.Nodes.Flatten();
 
-            Assert.AreEqual(1, flattened.Count());
+            Assert.Equal(1, flattened.Count());
 
-            Assert.IsTrue(flattened.Contains(foo));
+            Assert.True(flattened.Contains(foo));
         }
 
-        [Test]
+        [Fact]
         public void FlattenHierarchy()
         {
             var foo1 = new Foo();
@@ -41,11 +36,11 @@ namespace SimpleTree.Tests
 
             var flattened = tree.Nodes.Flatten();
 
-            Assert.AreEqual(3, flattened.Count());
+            Assert.Equal(3, flattened.Count());
 
-            Assert.IsTrue(flattened.Contains(foo1));
-            Assert.IsTrue(flattened.Contains(foo1_1));
-            Assert.IsTrue(flattened.Contains(foo1_2));
+            Assert.True(flattened.Contains(foo1));
+            Assert.True(flattened.Contains(foo1_1));
+            Assert.True(flattened.Contains(foo1_2));
         }
     }
 }

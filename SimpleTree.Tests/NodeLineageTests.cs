@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+using Xunit;
 
-namespace SimpleTree.Tests
+namespace CaptiveAire.SimpleTree.Tests
 {
-    [TestFixture]
     public class NodeLineageTests
     {
-        [Test]
+        [Fact]
         public void NoLineage()
         {
             var foo = new Foo();
@@ -19,11 +15,11 @@ namespace SimpleTree.Tests
 
             var lineage = node.GetItemLineage();
 
-            Assert.AreEqual(1, lineage.Count());
-            Assert.AreSame(foo, lineage.First());
+            Assert.Equal(1, lineage.Count());
+            Assert.Same(foo, lineage.First());
         }
 
-        [Test]
+        [Fact]
         public void SingleParent()
         {
 
@@ -34,22 +30,21 @@ namespace SimpleTree.Tests
 
             var lineage = childNode.GetNodeLineage();
 
-            Assert.AreEqual(2, lineage.Count());
+            Assert.Equal(2, lineage.Count());
 
-            Assert.AreSame(childNode, lineage.ElementAt(0));
-            Assert.AreSame(parentNode, lineage.ElementAt(1));
+            Assert.Same(childNode, lineage.ElementAt(0));
+            Assert.Same(parentNode, lineage.ElementAt(1));
 
         }
 
-        [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
+        [Fact]
         public void NullTest()
         {
             TreeNode<Foo> node = null;
 
             var lineage = node.GetNodeLineage();
 
-            Assert.AreEqual(1, lineage.Count());
+            Assert.Throws<ArgumentNullException>(() => lineage.Count());
         }
     }
 }

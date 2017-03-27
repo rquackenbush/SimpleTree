@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>CaptiveAire.SimpleTree</id>
+    <version>1.0.3</version>
+    <authors>CaptiveAire</authors>
+    <description>A simple tree implementation for representing objects in a hierarchy. 
+    Provides helper methods for creating and flattening trees.</description>
+    <language>en-US</language>
+    
+    <dependencies>
+    </dependencies>
+    
+    <references>
+      <reference file="CaptiveAire.SimpleTree.dll" />
+    </references> 
+  </metadata>
+
+  <files>
+    <file src="bin\release\CaptiveAire.SimpleTree.dll" target="lib\net45" />
+    <file src="bin\release\CaptiveAire.SimpleTree.xml" target="lib\net45" />
+  </files>
+</package>

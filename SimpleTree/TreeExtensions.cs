@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SimpleTree
+namespace CaptiveAire.SimpleTree
 {
     /// <summary>
     /// Helper methods for dealing with trees and nodes.
@@ -87,7 +87,7 @@ namespace SimpleTree
         public static IEnumerable<TreeNode<T>> GetNodeLineage<T>(this TreeNode<T> node)
         {
             if (node == null)
-                throw new ArgumentNullException("node");
+                throw new ArgumentNullException(nameof(node));
 
             var currentNode = node;
 

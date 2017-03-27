@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using System.Collections.Generic;
+using Xunit;
 
-namespace SimpleTree.Tests
+namespace CaptiveAire.SimpleTree.Tests
 {
-    [TestFixture]
+
     public class CreateTreeFromHiearchyTests
     {
-        [Test]
+        [Fact]
         public void CreateTreeFromHierarchy()
         {
             var menuItems = new List<MenuItem>()
@@ -30,10 +25,10 @@ namespace SimpleTree.Tests
             //Create the tree
             var tree = menuItems.CreateTreeFromHierarchy(m => m.Children);
 
-            Assert.AreEqual("1", tree.Nodes[0].Item.Text);
-            Assert.AreEqual("2", tree.Nodes[1].Item.Text);
-            Assert.AreEqual("2.1", tree.Nodes[1].Nodes[0].Item.Text);
-            Assert.AreEqual("2.2", tree.Nodes[1].Nodes[1].Item.Text);
+            Assert.Equal("1", tree.Nodes[0].Item.Text);
+            Assert.Equal("2", tree.Nodes[1].Item.Text);
+            Assert.Equal("2.1", tree.Nodes[1].Nodes[0].Item.Text);
+            Assert.Equal("2.2", tree.Nodes[1].Nodes[1].Item.Text);
         }
     }
 

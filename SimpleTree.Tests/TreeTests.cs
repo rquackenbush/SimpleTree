@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using Xunit;
 
-namespace SimpleTree.Tests
+namespace CaptiveAire.SimpleTree.Tests
 {
-    [TestFixture]
     public class TreeTests
     {
-        [Test]
+        [Fact]
         public void RetrieveSingleNode()
         {
             //Create the tree
@@ -23,10 +17,10 @@ namespace SimpleTree.Tests
             tree.Nodes.Add(new TreeNode<Foo>(foo));
 
             //Make sure that the item is represented
-            Assert.AreSame(foo, tree.Nodes[0].Item);
+            Assert.Same(foo, tree.Nodes[0].Item);
         }
 
-        [Test]
+        [Fact]
         public void CountTest()
         {
             //Create the tree
@@ -36,10 +30,10 @@ namespace SimpleTree.Tests
             tree.Nodes.Add(new TreeNode<Foo>(null));
             tree.Nodes.Add(new TreeNode<Foo>(null));
 
-            Assert.AreEqual(2, tree.Nodes.Count);
+            Assert.Equal(2, tree.Nodes.Count);
         }
 
-        [Test]
+        [Fact]
         public void ParentTest()
         {
             //Create the parent node
@@ -52,11 +46,11 @@ namespace SimpleTree.Tests
             parentNode.Nodes.Add(childnode);
 
             //Make sure that the parent is set correctly
-            Assert.AreSame(parentNode, childnode.Parent);
+            Assert.Same(parentNode, childnode.Parent);
 
         }
 
-        [Test]
+        [Fact]
         public void ParentIsNullWithClear()
         {
             //Create the parent node
@@ -72,10 +66,10 @@ namespace SimpleTree.Tests
             parentNode.Nodes.Clear();
 
             //Make sure that the parent is cleared
-            Assert.IsNull(childnode.Parent);
+            Assert.Null(childnode.Parent);
         }
 
-        [Test]
+        [Fact]
         public void ParentIsNullWithRemove()
         {
             //Create the parent node
@@ -91,10 +85,10 @@ namespace SimpleTree.Tests
             parentNode.Nodes.Remove(childnode);
 
             //Make sure that the parent is cleared
-            Assert.IsNull(childnode.Parent);
+            Assert.Null(childnode.Parent);
         }
-    
-        [Test]
+
+        [Fact]
         public void SetNodeTest()
         {
             //Create the parent node
@@ -111,10 +105,10 @@ namespace SimpleTree.Tests
             parentNode.Nodes[0] = differentChildNode;
 
             //Make sure the old parent was cleared
-            Assert.IsNull(childnode.Parent);
+            Assert.Null(childnode.Parent);
 
             //Make sure the new child has the parent correctly set
-            Assert.AreSame(differentChildNode.Parent, parentNode);
+            Assert.Same(differentChildNode.Parent, parentNode);
         }
     }
 }

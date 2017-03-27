@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using Xunit;
 
-namespace SimpleTree.Tests
+namespace CaptiveAire.SimpleTree.Tests
 {
     public class SiblingTests
     {
@@ -21,114 +16,114 @@ namespace SimpleTree.Tests
             return tree;
         }
 
-        [Test]
+        [Fact]
         public void FirstSiblingTest()
         {
             var tree = CreateTree();
 
             var firstSibling = tree.Nodes[3].FirstSibling;
 
-            Assert.AreSame(tree.Nodes[0], firstSibling);
+            Assert.Same(tree.Nodes[0], firstSibling);
         }
 
-        [Test]
+        [Fact]
         public void FirstSiblingNoParentTest()
         {
             var node = new TreeNode<Foo>();
 
             var firstSibling = node.FirstSibling;
 
-            Assert.IsNull(firstSibling);
+            Assert.Null(firstSibling);
         }
 
-        [Test]
+        [Fact]
         public void LastSiblingTest()
         {
             var tree = CreateTree();
 
             var lastSibling = tree.Nodes[3].LastSibling;
 
-            Assert.AreSame(tree.Nodes[3], lastSibling);
+            Assert.Same(tree.Nodes[3], lastSibling);
         }
 
-        [Test]
+        [Fact]
         public void LastSiblingNoParentTest()
         {
             var node = new TreeNode<Foo>();
 
             var lastSibling = node.LastSibling;
 
-            Assert.IsNull(lastSibling);
+            Assert.Null(lastSibling);
         }
 
-        [Test]
+        [Fact]
         public void PreviousSiblingTest()
         {
             var tree = CreateTree();
 
             var previousSibling = tree.Nodes[3].PreviousSibling;
 
-            Assert.AreSame(tree.Nodes[2], previousSibling);
+            Assert.Same(tree.Nodes[2], previousSibling);
         }
 
-        [Test]
+        [Fact]
         public void PreviousSiblingNoListTest()
         {
             var node = new TreeNode<Foo>();
 
             var previousSibling = node.PreviousSibling;
 
-            Assert.IsNull(previousSibling);
+            Assert.Null(previousSibling);
         }
 
-        [Test]
+        [Fact]
         public void PreviousSiblingNoParentTest()
         {
             var tree = CreateTree();
 
             var previousSibling = tree.Nodes[3].PreviousSibling;
 
-            Assert.AreSame(tree.Nodes[2], previousSibling);
+            Assert.Same(tree.Nodes[2], previousSibling);
         }
 
-        [Test]
+        [Fact]
         public void NoPreviousSiblingTest()
         {
             var tree = CreateTree();
 
             var previousSibling = tree.Nodes[0].PreviousSibling;
 
-            Assert.IsNull(previousSibling);
+            Assert.Null(previousSibling);
         }
 
-        [Test]
+        [Fact]
         public void NextSiblingTest()
         {
             var tree = CreateTree();
 
             var nextSibling = tree.Nodes[2].NextSibling;
 
-            Assert.AreSame(tree.Nodes[3], nextSibling);
+            Assert.Same(tree.Nodes[3], nextSibling);
         }
 
-        [Test]
+        [Fact]
         public void NextSiblingNoListTest()
         {
             var node = new TreeNode<Foo>();
 
             var nextSibling = node.NextSibling;
 
-            Assert.IsNull(nextSibling);
+            Assert.Null(nextSibling);
         }
 
-        [Test]
+        [Fact]
         public void NoNextSiblingTest()
         {
             var tree = CreateTree();
 
             var nextSibling = tree.Nodes[3].NextSibling;
 
-            Assert.IsNull(nextSibling);
+            Assert.Null(nextSibling);
         }
     }
 }

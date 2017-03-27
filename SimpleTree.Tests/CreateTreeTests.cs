@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using SimpleTree;
+using Xunit;
 
-namespace SimpleTree.Tests
+namespace CaptiveAire.SimpleTree.Tests
 {
-    [TestFixture]
     public class CreateTreeTests
     {
-        [Test]
+        [Fact]
         public void CreateTree()
         {
             var bar0 = new Bar(1, null);
@@ -34,14 +29,14 @@ namespace SimpleTree.Tests
                 list, 
                 (p, c) => c.ParentId != null && c.ParentId.Value == p.Id);
 
-            Assert.AreSame(bar0, tree.Nodes[0].Item);
+            Assert.Same(bar0, tree.Nodes[0].Item);
 
-            Assert.AreSame(bar1, tree.Nodes[1].Item);
+            Assert.Same(bar1, tree.Nodes[1].Item);
 
-            Assert.AreSame(bar0_1, tree.Nodes[0].Nodes[1].Item);
+            Assert.Same(bar0_1, tree.Nodes[0].Nodes[1].Item);
         }
 
-        [Test]
+        [Fact]
         public void CreateTree2()
         {
             var bar0 = new Bar(1, null);
@@ -64,11 +59,11 @@ namespace SimpleTree.Tests
             //Create the tree
             var tree = list.CreateTree(b => b.ParentId == null, (p, c) => c.ParentId != null && c.ParentId.Value == p.Id);
 
-            Assert.AreSame(bar0, tree.Nodes[0].Item);
+            Assert.Same(bar0, tree.Nodes[0].Item);
+            
+            Assert.Same(bar1, tree.Nodes[1].Item);
 
-            Assert.AreSame(bar1, tree.Nodes[1].Item);
-
-            Assert.AreSame(bar0_1, tree.Nodes[0].Nodes[1].Item);
+            Assert.Same(bar0_1, tree.Nodes[0].Nodes[1].Item);
         }
     }
 }

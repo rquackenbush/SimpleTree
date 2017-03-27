@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Linq;
 
-namespace SimpleTree
+namespace CaptiveAire.SimpleTree
 {
     /// <summary>
-    /// A node in a Tree<typeparam name="T"></typeparam>.
+    /// A node in a Tree.
     /// </summary>
     /// <typeparam name="T">The item of item to represent in the tree.</typeparam>
     public class TreeNode<T> : Tree<T>, INotifyPropertyChanged
@@ -71,12 +71,7 @@ namespace SimpleTree
 
         protected void RaisePropertyChanged(string propertyName)
         {
-            var handler = this.PropertyChanged;
-
-            if (handler == null)
-                return;
-
-            handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
         /// <summary>
@@ -147,15 +142,5 @@ namespace SimpleTree
                 return _parentList.LastOrDefault();
             }
         }
-
-        /// <summary>
-        /// Gets the child nodes of this node.
-        /// </summary>
-        public TreeNodes<T> Nodes
-        {
-            get { return _nodes; }
-        }
-
-
     }
 }
