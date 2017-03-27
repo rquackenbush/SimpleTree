@@ -34,11 +34,6 @@ namespace CaptiveAire.SimpleTree.Tests
 
     public class MenuItem
     {
-        public MenuItem()
-        {
-            
-        }
-
         public MenuItem(string text)
         {
             this.Text = text;

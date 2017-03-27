@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace CaptiveAire.SimpleTree.Tests
@@ -34,7 +35,7 @@ namespace CaptiveAire.SimpleTree.Tests
             tree.Nodes[0].Nodes.Add(new TreeNode<Foo>(foo1_1));
             tree.Nodes[0].Nodes.Add(new TreeNode<Foo>(foo1_2));
 
-            var flattened = tree.Nodes.Flatten();
+            IEnumerable<Foo> flattened = tree.Nodes.Flatten();
 
             Assert.Equal(3, flattened.Count());
 
